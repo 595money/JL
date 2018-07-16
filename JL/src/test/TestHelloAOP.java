@@ -7,7 +7,11 @@ import model.IHello;
 public class TestHelloAOP {
 	public static void main(String[] args) {
 		
-		IHello helloProxy = new HelloProxy(new HelloSpeaker());
+		HelloProxy proxy = new HelloProxy();
+		
+		proxy.setHelloMaker(new HelloSpeaker());
+		
+		IHello helloProxy = proxy;
 		
 		helloProxy.hello("Simon");
 	

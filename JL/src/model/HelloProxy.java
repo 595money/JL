@@ -27,4 +27,14 @@ public class HelloProxy implements IHello{
 		
 	}
 
+
+	public IHello getHelloMaker() {
+		return helloMaker;
+	}
+
+
+	public void setHelloMaker(IHello helloMaker) {
+		this.helloMaker = helloMaker;
+	}
+
 }

@@ -14,9 +14,13 @@ public class TestProxyDynamic {
 
 	private void run(String feature) {
 		if ("hello".equals(feature)) {
+			
+			//1.建立logDelegate Obj
 			LogHandlerDynamic logHandler = new LogHandlerDynamic();
-			IHello helloProxy = (IHello) logHandler.bind(new HelloSpeaker());
-			helloProxy.hello("Simon");
+			//2.set 要委託的功能
+			logHandler.setDelegate(new HelloSpeaker());
+			IHello helloProxy = (IHello) logHandler.bind();
+			helloProxy.hello("Simon");		
 			return;
 		};	
 		System.out.println("無此功能");

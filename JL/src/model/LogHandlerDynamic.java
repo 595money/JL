@@ -6,6 +6,10 @@ import java.lang.reflect.Method;
 public class LogHandlerDynamic implements InvocationHandler {
 	private Object delegate;
 
+	public void setDelegate(Object delegate) {
+		this.delegate = delegate;
+	}
+
 	public Object invoke(Object arg0, Method arg1, Object[] arg2) throws Throwable {
 		Object result = null;
 		try {
@@ -21,9 +25,10 @@ public class LogHandlerDynamic implements InvocationHandler {
 		return result;
 	}
 
-	public Object bind(Object delegate) {
-		this.delegate = delegate;
-		return Proxy.newProxyInstance(delegate.getClass().getClassLoader(), delegate.getClass().getInterfaces(), this);
+	public Object bind() {
+
+		return Proxy.newProxyInstance(this.delegate.getClass().getClassLoader(),
+				this.delegate.getClass().getInterfaces(), this);
 	}
 
 }

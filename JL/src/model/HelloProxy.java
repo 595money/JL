@@ -6,12 +6,19 @@ public class HelloProxy implements IHello{
 	
 	private IHello helloMaker;
 	
+	public HelloProxy() {
+
+	}
+
+	
 	public HelloProxy(IHello helloSpeaker) {
 		this.helloMaker = helloSpeaker; 
 	}
 	
+	
+	
 	public void hello(String name) {
-		System.out.println("開始log....");
+		System.out.println("開始log....5656565656");
 		
 		helloMaker.hello(name);
 		

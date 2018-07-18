@@ -5,7 +5,7 @@ import model.IFlyBehavior;
 public class Duck {
 	private String name;
 	private String gender;
-	private IFlyBehavior flyBehavior;
+	private IFlyBehavior flyBehavior;//功能A
 	
 	
 	public void performFly(){

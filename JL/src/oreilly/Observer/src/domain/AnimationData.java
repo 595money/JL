@@ -36,6 +36,7 @@ public class AnimationData implements ISubject {
 	@Override
 	public void registerObserver(IObserver IObserver) {
 		this.observers.add(IObserver);
+		IObserver.update(this);
 	}
 
 	/**
